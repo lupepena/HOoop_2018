@@ -4,17 +4,18 @@ class Fila(object):
     def __init__(self):
         """constructor de la clase Fila """
         self.enfila= 0
-        self.fila = []
+        self.fila = []#la fila es una lista
 
 class FilaPreferencial(Fila):
     """Clase de la fila de los clientes preferenciales"""        
 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila preferencial"""
-        pass
+        self.fila.append(cliente)#a fila le agrego los clientes, los clientes son los elementos de la fila
+        self.enfila+=1 #cada vez que inserta le suma uno y cuento los clientes en una fila
 
     def atender(self):
-        """Atiende al proximo cliente prederencial"""
+        """Atiende al proximo cliente preferencial"""
         self.enfila-=1
         self.fila.pop(0)
     
@@ -29,11 +30,13 @@ class FilaGeneral(Fila):
 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila no preferencial"""
-        pass
+        self.fila.append(cliente)#a fila le agrego los clientes, los clientes son los elementos de la fila
+        self.enfila+=1 #cada vez que inserta le suma uno y cuento los clientes en una fila
 
     def atender(self):
-        """Atiende al proximo cliente prederencial"""
-        pass      
+        """Atiende al proximo cliente general"""
+        self.enfila-=1
+        self.fila.pop(0)     
 
     
 
